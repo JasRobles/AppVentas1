@@ -12,22 +12,20 @@ namespace Clase2403.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_usuarios
+    public partial class producto
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tb_usuarios()
+        public producto()
         {
-            this.Roles_Usuarios = new HashSet<Roles_Usuarios>();
-            this.tb_venta = new HashSet<tb_venta>();
+            this.detalleVenta = new HashSet<detalleVenta>();
         }
     
-        public int Id { get; set; }
-        public string Email { get; set; }
-        public string Contrasena { get; set; }
+        public int idProducto { get; set; }
+        public string nombreProducto { get; set; }
+        public Nullable<decimal> precioProducto { get; set; }
+        public string estadoProducto { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Roles_Usuarios> Roles_Usuarios { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_venta> tb_venta { get; set; }
+        public virtual ICollection<detalleVenta> detalleVenta { get; set; }
     }
 }

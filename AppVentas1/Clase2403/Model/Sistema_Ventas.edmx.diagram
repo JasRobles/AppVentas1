@@ -5,9 +5,19 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="5df8fa9ef5c54753ab37d941f22a09c3" Name="Diagram1">
-        <EntityTypeShape EntityType="sistema_ventasModel.tb_usuarios" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="sistema_ventasModel.Roles_Usuarios" Width="1.5" PointX="4.125" PointY="0.75" />
-        <AssociationConnector Association="sistema_ventasModel.FK_Roles_Usuarios_tb_usuarios" />
+        <EntityTypeShape EntityType="sistema_ventasModel.tb_usuarios" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="sistema_ventasModel.Roles_Usuarios" Width="1.5" PointX="5" PointY="0.75" />
+        <AssociationConnector Association="sistema_ventasModel.FK__Roles_Usu__Id_Us__398D8EEE" />
+        <EntityTypeShape EntityType="sistema_ventasModel.detalleVenta" Width="1.5" PointX="7.25" PointY="3.5" />
+        <EntityTypeShape EntityType="sistema_ventasModel.producto" Width="1.5" PointX="5" PointY="7.75" />
+        <EntityTypeShape EntityType="sistema_ventasModel.tb_cliente" Width="1.5" PointX="2.75" PointY="5.875" />
+        <EntityTypeShape EntityType="sistema_ventasModel.tb_documento" Width="1.5" PointX="2.75" PointY="3.625" />
+        <EntityTypeShape EntityType="sistema_ventasModel.tb_venta" Width="1.5" PointX="5" PointY="3.25" />
+        <AssociationConnector Association="sistema_ventasModel.FK__detalleVe__idPro__47DBAE45" />
+        <AssociationConnector Association="sistema_ventasModel.FK__detalleVe__idVen__46E78A0C" />
+        <AssociationConnector Association="sistema_ventasModel.FK__tb_venta__iDClie__412EB0B6" />
+        <AssociationConnector Association="sistema_ventasModel.FK__tb_venta__idDocu__403A8C7D" />
+        <AssociationConnector Association="sistema_ventasModel.FK__tb_venta__iDUsua__4222D4EF" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

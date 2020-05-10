@@ -12,12 +12,16 @@ namespace Clase2403.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Roles_Usuarios
+    public partial class detalleVenta
     {
-        public int Id_Rol_Usuario { get; set; }
-        public int Id_Usuario { get; set; }
-        public string Tipo_Rol { get; set; }
+        public int iDDetalleVenta { get; set; }
+        public int idVenta { get; set; }
+        public int idProducto { get; set; }
+        public Nullable<int> cantidad { get; set; }
+        public Nullable<decimal> precio { get; set; }
+        public Nullable<decimal> total { get; set; }
     
-        public virtual tb_usuarios tb_usuarios { get; set; }
+        public virtual producto producto { get; set; }
+        public virtual tb_venta tb_venta { get; set; }
     }
 }

@@ -34,7 +34,8 @@ namespace Clase2403
                 if (lista.Count() > 0)
                 {
                     frmMenu menu = new frmMenu();
-                    menu.Show();
+                    menu.ShowDialog();
+                    this.Close();
                 }
                 else
                 {

@@ -24,14 +24,14 @@ namespace Clase2403.Vista
             using (sistema_ventasEntities db = new sistema_ventasEntities())
             {
 
-                // dtvUsuarios.DataSource = db.tb_usuarios.ToList();
+                dtvUsuarios.Rows.Clear();
 
                 var tb_Usuarios = db.tb_usuarios;
 
                 foreach (var iterardatostbUsuarios in tb_Usuarios)
                 {
 
-                    dtvUsuarios.Rows.Add(iterardatostbUsuarios.Email,iterardatostbUsuarios.Contrasena);
+                    dtvUsuarios.Rows.Add(iterardatostbUsuarios.Id,iterardatostbUsuarios.Email,iterardatostbUsuarios.Contrasena);
 
                 }
 
@@ -47,12 +47,7 @@ namespace Clase2403.Vista
 
         }
 
-        private void btnCargar_Click(object sender, EventArgs e)
-        {
-
-            CargarDatos();
-
-        }
+      
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -117,9 +112,11 @@ namespace Clase2403.Vista
             CargarDatos();
         }
 
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
+       
 
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            LimpiarDatos();
         }
     }
 }
