@@ -68,5 +68,17 @@ namespace Clase2403.Vista
             mdi(product);
 
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        public static frmVentas V = new frmVentas();
+        private void iNGRESARVENTAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            V.CargarCombos();
+            mdi(V);
+        }
     }
 }

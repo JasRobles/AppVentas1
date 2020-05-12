@@ -29,10 +29,15 @@ namespace Clase2403
                 var lista = from usuario in db.tb_usuarios
                             where usuario.Email == txtUsuario.Text
                             && usuario.Contrasena == txtContraseña.Text
-                            select usuario;
+                            select new { ID = usuario.Id};
 
                 if (lista.Count() > 0)
                 {
+                    foreach(var iterar in lista)
+                    {
+                        frmMenu.V.txtIdUsuario.Text = iterar.ID.ToString();
+                        frmMenu.V.txtUsuario.Text = txtUsuario.Text;
+                    }
                     frmMenu menu = new frmMenu();
                     menu.ShowDialog();
                     this.Close();
