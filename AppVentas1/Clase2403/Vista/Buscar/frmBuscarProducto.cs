@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Clase2403.Vista;
 
 namespace Clase2403.Vista.Buscar
 {
@@ -61,6 +62,22 @@ namespace Clase2403.Vista.Buscar
         {
             filtro();
 
+        }
+        
+       
+        private void dgvBuscarProd_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            String ID = dgvBuscarProd.CurrentRow.Cells[0].Value.ToString();
+            String Nombre = dgvBuscarProd.CurrentRow.Cells[1].Value.ToString();
+            String precio = dgvBuscarProd.CurrentRow.Cells[2].Value.ToString();
+
+           
+            frmMenu.V.txtID.Text = ID;
+            frmMenu.V.txtProducto.Text = Nombre;
+            frmMenu.V.txtPrecio.Text = precio;
+            
+
+            
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Clase2403.Vista.Buscar;
 
+
 namespace Clase2403.Vista
 {
     public partial class frmVentas : Form
@@ -20,6 +21,7 @@ namespace Clase2403.Vista
         {
             InitializeComponent();
             CargarCombos();
+            retornoid();
         }
 
         public void CargarCombos()
@@ -57,10 +59,52 @@ namespace Clase2403.Vista
 
         }
 
+        
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             frmBuscarProducto B = new frmBuscarProducto();
             B.ShowDialog();
+        }
+
+        void retornoid()
+        {
+            using(sistema_ventasEntities db = new sistema_ventasEntities())
+            {
+                var v = db.tb_venta;
+
+                foreach (var iterardatosventa in v)
+                {
+                    txtID.Text = iterardatosventa.idVenta.ToString();
+
+                }
+            }
+        }
+        
+        public void Calculo()
+        {
+
+
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Double precio;
+            Double cantidad;
+            Double total;
+
+            precio = Double.Parse(txtPrecio.Text);
+            cantidad = Convert.ToDouble(txtCantidad.Text);
+            total = precio * cantidad;
+            txtTotal.Text = total.ToString();
+
+            dgvVenta.Rows.Add(txtID.Text, txtProducto.Text, txtPrecio.Text, txtCantidad.Text, txtTotal.Text);
+
+        }
+        
+        private void dgvVenta_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

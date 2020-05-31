@@ -48,5 +48,10 @@ namespace Clase2403
                 }
             }
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
